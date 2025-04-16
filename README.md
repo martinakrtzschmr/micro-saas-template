@@ -1,17 +1,71 @@
+#NextJs SaaS template project
+
+This project is a boilerplate for future SaaS projects. It will organize files, detail data flow and implement design pattern principles.
+
+## File structure
+
+```
+📁 my-nextjs-project/
+│
+├── 📁 app/
+│   ├── 📁 (project)/               # Route group (e.g., main layout/pages)
+│   │   ├── 📄 layout.tsx           # Shared layout for the group
+│   │   └── 📄 page.tsx             # Home page or root route
+│   │
+│   ├── 📁 api/                     # API routes
+│   │   └── 📁 users/
+│   │       └── 📄 route.ts        # API handler for /api/users
+│   │
+│   ├── 📁 actions/                 # Server Actions (e.g. form submissions)
+│   │   └── 📄 submitPost.ts       # `use server` function
+│   │
+│   ├── 📁 components/              # Reusable UI components
+│   │   ├── 📄 Button.tsx
+│   │   └── 📄 Navbar.tsx
+│   │
+│   ├── 📁 hooks/                   # Custom hooks
+│   │   └── 📄 useAuth.ts
+│   │
+│   ├── 📁 lib/                     # Utilities (e.g., helpers, validators)
+│   │   └── 📄 formatDate.ts
+│   │
+│   └── 📁 server/                  # Server-side only logic (DB, APIs)
+│       └── 📄 getUserById.ts
+│
+├── 📁 public/                      # Static assets (images, favicon, etc.)
+│   └── 📄 favicon.ico
+│
+├── 📁 node_modules/               # Project dependencies (auto-generated)
+│
+├── 📄 .gitignore                  # Ignore unnecessary files in Git
+├── 📄 eslint.config.mjs          # ESLint config (flat config)
+├── 📄 next-env.d.ts              # Auto-generated Next.js TS types
+├── 📄 next.config.ts             # Next.js configuration
+├── 📄 package.json               # Project metadata and dependencies
+├── 📄 package-lock.json          # Dependency lock file
+├── 📄 postcss.config.mjs         # PostCSS (e.g., Tailwind setup)
+├── 📄 tsconfig.json              # TypeScript configuration
+└── 📄 README.md                  # Project documentation
+```
+
+## Concepts Impremented on this project
+
+
+
+## Concepts to be implemented
+
+
+
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
