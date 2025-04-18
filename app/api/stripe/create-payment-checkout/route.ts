@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getOrCreateCustomer } from "@/app/server/stripe/customer";
 
 export async function POST(req: NextRequest) {
-  const price = process.env.STRIPE_PRICE_ID;
+  const price = process.env.STRIPE_PAYMENT_PRICE_ID;
 
   if (!price) {
     return NextResponse.json({ error: "Price is required" }, { status: 400 });
@@ -20,6 +20,12 @@ export async function POST(req: NextRequest) {
 
   const customerId = await getOrCreateCustomer(userId, userEmail);
 
+  const metadata = {
+    userId,
+    userEmail,
+    price,
+  }
+
   console.log('Creating checkout session with:', { price, customerId, userEmail });
 
   try {
@@ -29,7 +35,8 @@ export async function POST(req: NextRequest) {
       mode: "payment",
       payment_method_types: ["card", "boleto"],
       success_url: `${req.headers.get("origin")}/success`,
-      cancel_url: `${req.headers.get("origin")}/`
+      cancel_url: `${req.headers.get("origin")}/`,
+      metadata,
     });
 
     console.log('Created session:', checkoutSession.id);

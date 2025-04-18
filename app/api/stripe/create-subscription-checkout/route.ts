@@ -20,6 +20,12 @@ export async function POST(req: NextRequest) {
 
   const customerId = await getOrCreateCustomer(userId, userEmail);
 
+  const metadata = {
+    userId,
+    userEmail,
+    price,
+  }
+
   console.log('Creating checkout session with:', { price, customerId, userEmail });
 
   try{
@@ -29,7 +35,8 @@ export async function POST(req: NextRequest) {
       mode: "subscription",
       payment_method_types: ["card"],
       success_url: `${req.headers.get("origin")}/success`,
-      cancel_url: `${req.headers.get("origin")}/`
+      cancel_url: `${req.headers.get("origin")}/`,
+      metadata,
     });
 
     console.log('Created session:', checkoutSession.id);

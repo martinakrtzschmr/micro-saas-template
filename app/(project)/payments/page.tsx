@@ -15,7 +15,7 @@ export default function Payments() {
         <div className="flex items-center flex-col gap-4">
           <div>
             <button className="bg-blue-500 text-white p-2 rounded-md" onClick={() => createPaymentCheckout({
-              priceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_ID,
+              priceId: process.env.NEXT_PUBLIC_STRIPE_PAYMENT_PRICE_ID,
             })}>Create Payment</button>
           </div>
           <div>
