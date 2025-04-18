@@ -48,13 +48,13 @@ This project is a boilerplate for future SaaS projects. It will organize files, 
 └── 📄 README.md                  # Project documentation
 ```
 
-## Concepts Impremented on this project
+## Concepts Implemented on this project
 
-
+Stripe context added to the application - 
 
 ## Concepts to be implemented
 
-
+Add payment-checkout and subscription-checkout with Stripe API
 
 
 

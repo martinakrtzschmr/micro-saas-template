@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Courier_Prime } from "next/font/google";
+
 import "./globals.css";
 
 const courierPrime = Courier_Prime({
