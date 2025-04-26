@@ -50,17 +50,20 @@ This project is a boilerplate for future SaaS projects. It will organize files, 
 
 ## Concepts Implemented on this project
 
-Stripe context added to the application - 
+Stripe integration - Creating subscriptions, item checkout and portal with user information
+Firebase integration - Saving users information
+Google login integration - Users can login with Google accounts
 
 ## Concepts to be implemented
 
-Add payment-checkout and subscription-checkout with Stripe API
+Add product list - Use Stripe for pricing
+Create and add App UI - Possibly use Figma for design
+Add Mercado Pago integration
+Check on page SEO created by Next - not sure if optimized
 
+## Known Issues
 
-
-
-
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+--
 
 ## Getting Started
 
