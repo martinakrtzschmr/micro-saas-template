@@ -21,7 +21,7 @@ export async function getOrCreateCustomer(userId: string, userEmail: string) {
     const customer = await stripe.customers.create({ email: userEmail });
     await userRef.update({ stripeCustomerId: customer.id });
     return customer.id;
-  } catch (error) {
+  } catch (err: unknown) {
     throw new Error("Error getting or creating customer");
   }
 }

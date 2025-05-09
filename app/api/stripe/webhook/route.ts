@@ -1,4 +1,3 @@
-import { headers } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import stripe from "@/app/lib/stripe";
 import { db } from "@/app/lib/firebase";
@@ -24,9 +23,9 @@ export async function POST(req: NextRequest) {
         signature,
         webhookSecret
       );
-    } catch (err: any) {
-      console.error(`Webhook signature verification failed:`, err.message);
-      return NextResponse.json({ error: `Webhook Error: ${err.message}` }, { status: 400 });
+    } catch (err: unknown) {
+      console.error(`Webhook signature verification failed:`, err);
+      return NextResponse.json({ error: `Webhook Error: ${err}` }, { status: 400 });
     }
 
     console.log(`Processing webhook event: ${event.type}`);

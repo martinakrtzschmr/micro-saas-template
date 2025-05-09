@@ -12,7 +12,9 @@ export function useCheckout() {
     loadStripeAsync();
   }, []);
 
-  const createPaymentCheckout = async (checkoutData: any) => {
+  const createPaymentCheckout = async (checkoutData: {
+    priceId: string | undefined;
+  }) => {
     if (!stripe) {
       throw new Error("Stripe is not initialized");
     }
@@ -47,7 +49,9 @@ export function useCheckout() {
     }
   }
 
-  const createSubscriptionCheckout = async (checkoutData: any) => {
+  const createSubscriptionCheckout = async (checkoutData: {
+    priceId: string | undefined;
+  }) => {
     if (!stripe) {
       throw new Error("Stripe is not initialized");
     }
