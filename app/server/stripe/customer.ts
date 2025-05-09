@@ -22,6 +22,7 @@ export async function getOrCreateCustomer(userId: string, userEmail: string) {
     await userRef.update({ stripeCustomerId: customer.id });
     return customer.id;
   } catch (err: unknown) {
+    console.error(`Webhook signature verification failed:`, err);
     throw new Error("Error getting or creating customer");
   }
 }
